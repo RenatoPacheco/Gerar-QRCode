@@ -17,8 +17,51 @@
   </head>
   <body>
     <div class="container">
-        <h1>Gerador de QRCode</h1>
+        <h1 class="text-center">Gerador de QRCode</h1>
+        <div class="col-md-2 text-center">
+            <p><img class="disabled" src="<%=ResolveUrl("~/Images/icones/inbox/128.png")%>" /></p>
+            <p><a href="#" class="btn btn-primary disabled" title="clique aqui para fazer o download">Download</a></p>
+        </div>
+        <div class="col-md-7">
+            <form role="tabpanel">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Dados</a></li>
+                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Configurações</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <fieldset role="tabpanel" class="tab-pane active" id="home">
+                    <legend>Dados</legend>
+                    <div class="form-group">
+                        <label for="id001">URL</label>
+                        <input type="email" class="form-control" id="id001" placeholder="Enter email">
+                    </div>
+                </fieldset>
+                <fieldset role="tabpanel" class="tab-pane" id="profile">
+                    <legend>Configuração</legend>
+                    <div class="form-group">
+                        <label for="id002">Outro form</label>
+                        <input type="email" class="form-control" id="id002" placeholder="Enter email">
+                    </div>
+                </fieldset>
+             </div>
+            </form>
+        </div>        
+        <div class="col-md-3 text-center">
+            <a href="#" class="btn btn-link" title="clique aqui para fazer o download"><img src="<%=ResolveUrl("~/Images/icones/globe/32.png")%>" /></a>
+            <a href="#" class="btn btn-link" title="clique aqui para fazer o download"><img src="<%=ResolveUrl("~/Images/icones/globe/32.png")%>" /></a>
+            <a href="#" class="btn btn-link" title="clique aqui para fazer o download"><img src="<%=ResolveUrl("~/Images/icones/globe/32.png")%>" /></a>
+            <a href="#" class="btn btn-link" title="clique aqui para fazer o download"><img src="<%=ResolveUrl("~/Images/icones/globe/32.png")%>" /></a>
+            <a href="#" class="btn btn-link" title="clique aqui para fazer o download"><img src="<%=ResolveUrl("~/Images/icones/globe/32.png")%>" /></a>
+            <a href="#" class="btn btn-link" title="clique aqui para fazer o download"><img src="<%=ResolveUrl("~/Images/icones/globe/32.png")%>" /></a>
+            <a href="#" class="btn btn-link" title="clique aqui para fazer o download"><img src="<%=ResolveUrl("~/Images/icones/globe/32.png")%>" /></a>
+            <a href="#" class="btn btn-link" title="clique aqui para fazer o download"><img src="<%=ResolveUrl("~/Images/icones/globe/32.png")%>" /></a>
+        </div>
     </div>
+    <!--
+    <p class="glyphicon glyphicon-globe text-center" style="font-size:25em;padding:10px;"></p>
+    -->
     <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/jquery-1.11.1.min.js")%>"></script>
     <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/bootstrap.min.js")%>"></script>
     <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/default.js")%>"></script>
