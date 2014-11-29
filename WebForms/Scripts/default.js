@@ -1,6 +1,6 @@
 ﻿/* Cada método vai gerar a string para um tipo de QRCode específico */
 var QRCodeString = new function () {
-    this.QRCodeString = 'Class QRCodeString no value';
+    this.QRCodeString = '';
     
     this.toString = function () {
         return this.QRCodeString;
@@ -9,10 +9,14 @@ var QRCodeString = new function () {
     this.url = function (form) {
         var valor;
         
+        this.QRCodeString = '';
         valor = $(form).find('input[name="valor"]').val();
         valor = $.trim(valor);
         $(form).find('input[name="valor"]').val(valor);
-        this.QRCodeString = $(form).serialize();
+
+        if (valor != '') {
+            this.QRCodeString = $(form).serialize();
+        }            
 
         return this;
     };
@@ -117,10 +121,12 @@ var GerenciarPreviw = new function () {
 };
 
 jQuery(document).ready(function ($) {
-    $('button:submit').bind('click', function () {
+    $('input, select, textarea').bind('change', function () {
+        var $atual = QRCodeString.toString();
         var $url = "/Ashx/GerarQRCode.ashx?timeout=" + (new Date()).getTime() + "&";
         var $valor = QRCodeString.texto('form').toString();
-        GerenciarPreviw.start($url + $valor, $url + $valor + "&download=true");
-        return false;
+        if ($valor != '' && $atual != $valor) {
+            GerenciarPreviw.start($url + $valor, $url + $valor + "&download=true");
+        }
     });
 });
