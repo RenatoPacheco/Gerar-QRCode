@@ -25,7 +25,7 @@
             </p>
             <p><a href="#" class="btn btn-primary disabled download" title="clique aqui para fazer o download">Download</a></p>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-10">
             <form role="tabpanel">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
@@ -78,7 +78,8 @@
                 </fieldset>
              </div>
             </form>
-        </div>        
+        </div>
+        <!--   
         <div class="col-md-3 text-center">
             <a href="#" class="btn btn-link" title="clique aqui para fazer o download"><img src="<%=ResolveUrl("~/Images/icones/globe/32.png")%>" /></a>
             <a href="#" class="btn btn-link" title="clique aqui para fazer o download"><img src="<%=ResolveUrl("~/Images/icones/globe/32.png")%>" /></a>
@@ -89,6 +90,7 @@
             <a href="#" class="btn btn-link" title="clique aqui para fazer o download"><img src="<%=ResolveUrl("~/Images/icones/globe/32.png")%>" /></a>
             <a href="#" class="btn btn-link" title="clique aqui para fazer o download"><img src="<%=ResolveUrl("~/Images/icones/globe/32.png")%>" /></a>
         </div>
+        -->
     </div>
     <!--
     <p class="glyphicon glyphicon-picture text-center" style="font-size:25em;padding:10px;"></p>
