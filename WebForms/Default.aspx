@@ -40,6 +40,9 @@
                         <label for="form_001">URL</label>
                         <input name="valor" type="text" class="form-control" id="form_001" placeholder="http://endereco.com.br">
                     </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-default">Gerar QRCode</button>
+                    </div>
                 </fieldset>
                 <fieldset role="tabpanel" class="tab-pane" id="profile">
                     <legend>Configuração</legend>

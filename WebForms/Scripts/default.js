@@ -96,7 +96,7 @@ var GerenciarPreviw = new function () {
             });
     };
 
-    this.preloader = function (preview, download) {
+    this.start = function (preview, download) {
         this.urlPreview = preview;
         this.urlDownload = download;
         $('a.download').attr('href', download).addClass('disabled');
@@ -117,8 +117,10 @@ var GerenciarPreviw = new function () {
 };
 
 jQuery(document).ready(function ($) {
-    var url = 'http://prosummoners.com/wp-content/uploads/2014/08/Neal-300x112.png';
-    GerenciarPreviw.preloader(url, url);
-
-    // alert(QRCodeString.texto('form').toString());
+    $('button:submit').bind('click', function () {
+        var $url = "/Ashx/GerarQRCode.ashx?timeout=" + (new Date()).getTime() + "&";
+        var $valor = QRCodeString.texto('form').toString();
+        GerenciarPreviw.start($url + $valor, $url + $valor + "&download=true");
+        return false;
+    });
 });
