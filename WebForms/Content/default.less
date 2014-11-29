@@ -2,15 +2,23 @@
 @import "bootstrap/variables.less";
 @import "bootstrap/mixins.less";
 
+body {
+    min-width:320px;
+}
+
 fieldset {
     border:none;
-    padding:0.5em;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
 }
 
 legend {
     display:none;
 }
 
+img.preloader {
+    display:none;
+}
 
 // Small devices (tablets, 768px and up)
 @media (min-width: @screen-sm-min) {

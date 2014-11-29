@@ -19,8 +19,11 @@
     <div class="container">
         <h1 class="text-center">Gerador de QRCode</h1>
         <div class="col-md-2 text-center">
-            <p><img class="disabled" src="<%=ResolveUrl("~/Images/icones/inbox/128.png")%>" /></p>
-            <p><a href="#" class="btn btn-primary disabled" title="clique aqui para fazer o download">Download</a></p>
+            <p>
+                <img class="preview" width="128" height="128" src="<%=ResolveUrl("~/Images/icones/picture/128.png")%>" />
+                <img class="preloader" width="128" height="128" src="<%=ResolveUrl("~/Images/icones/preloader/128.gif")%>" />
+            </p>
+            <p><a href="#" class="btn btn-primary disabled download" title="clique aqui para fazer o download">Download</a></p>
         </div>
         <div class="col-md-7">
             <form role="tabpanel">
@@ -34,15 +37,43 @@
                 <fieldset role="tabpanel" class="tab-pane active" id="home">
                     <legend>Dados</legend>
                     <div class="form-group">
-                        <label for="id001">URL</label>
-                        <input type="email" class="form-control" id="id001" placeholder="Enter email">
+                        <label for="form_001">URL</label>
+                        <input name="valor" type="text" class="form-control" id="form_001" placeholder="http://endereco.com.br">
                     </div>
                 </fieldset>
                 <fieldset role="tabpanel" class="tab-pane" id="profile">
                     <legend>Configuração</legend>
-                    <div class="form-group">
-                        <label for="id002">Outro form</label>
-                        <input type="email" class="form-control" id="id002" placeholder="Enter email">
+                    <div class="form-group col-sm-4">
+                        <label>Tipo</label>
+                        <select class="form-control" name="modo">
+                            <option value="ALPHA_NUMERIC">Alfa-Numérico</option>
+                            <option value="BYTE" selected="selected">Byte</option>
+                            <option value="NUMERIC">Numério</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label>Nível de correção</label>
+                        <select class="form-control" name="correcao">
+                            <option value="L">Nível L - até 7%</option>
+                            <option value="M" selected="selected">Nível M - até 15%</option>
+                            <option value="Q">Nível Q - até 25%</option>
+                            <option value="H">Nível H - até 30%</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-2">
+                        <label>Tamanho</label>
+                        <select class="form-control" name="escala">
+                            <option value="1" selected="selected">100%</option>
+                            <option value="1,5">150%</option>
+                            <option value="2">200%</option>
+                            <option value="3">300%</option>
+                            <option value="4">400%</option>
+                        </select>
+                    </div>                    <div class="form-group col-sm-2">
+                        <label>Versão</label>
+                        <select class="form-control" name="versao">
+                            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option><option>32</option><option>33</option><option>34</option><option>35</option><option>36</option><option>37</option><option>38</option><option>39</option><option>40</option>
+                        </select>
                     </div>
                 </fieldset>
              </div>
@@ -60,7 +91,7 @@
         </div>
     </div>
     <!--
-    <p class="glyphicon glyphicon-globe text-center" style="font-size:25em;padding:10px;"></p>
+    <p class="glyphicon glyphicon-picture text-center" style="font-size:25em;padding:10px;"></p>
     -->
     <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/jquery-1.11.1.min.js")%>"></script>
     <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/bootstrap.min.js")%>"></script>
