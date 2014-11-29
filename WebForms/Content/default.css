@@ -1,0 +1,20 @@
+﻿body {
+  min-width: 320px;
+}
+fieldset {
+  border: none;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+legend {
+  display: none;
+}
+img.preloader {
+  display: none;
+}
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2.3em;
+  }
+}
+/*# sourceMappingURL=default.css.map */
