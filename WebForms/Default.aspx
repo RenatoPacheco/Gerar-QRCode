@@ -17,7 +17,12 @@
   </head>
   <body>
     <h1 class="text-center">Gerador de QRCode</h1>
-    <div class="container"></div>
+    <h2 class="text-center">#1</h2>
+    <div class="container" id="ex1"></div>
+    <h2 class="text-center">#2</h2>
+    <div class="container" id="ex2"></div>
+    <h2 class="text-center">#3</h2>
+    <div class="container" id="ex3"></div>
     <!--
     <p class="glyphicon glyphicon-trash text-center" style="font-size:25em;padding:10px;"></p>
     -->

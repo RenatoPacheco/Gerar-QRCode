@@ -10,53 +10,91 @@
             urlPreview: "/Ashx/GerarQRCode.ashx?",
             urlDownload: "/Ashx/GerarQRCode.ashx?download=true"
         }, options);
+        var guid = (function () { function key() { return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1); } return function () { return key() + key() + '-' + key() + '-' + key() + '-' + key() + '-' + key() + key() + key(); }; })();
         var loadEvent = function (event) {
+            var _base = $(this).attr('gerar-qrcode');
+            var _classeBase = '.' + _base;
+
             $(this).unbind({ 'load': loadEvent, 'error': errorEvent });
-            $('.GerarQRCode .download').removeClass('disabled');
+            $(_classeBase + ' .preview a').removeClass('disabled');
         };
         var errorEvent = function (event) {
+            var _base = $(this).attr('gerar-qrcode');
+            var _classeBase = '.' + _base;
+
             $(this).unbind({ 'load': loadEvent, 'error': errorEvent });
-            $('.GerarQRCode .download').addClass('disabled');
+            $(_classeBase + ' .preview a').addClass('disabled');
         };
         var loadTemplate = function (response, status, xhr) {
+            var _base = $(this).attr('gerar-qrcode');
+            var _classeBase = '.' + _base;
+
             if (status == "error") {
                 $(this).html('<p>Erro ao carregar formulário.</p>')
             } else {
-                $(this).find('input, select, textarea').change(changeEvent);
-                $(this).find('input:text, textarea').keyup(changeEvent);
+                $(this).find('input, select, textarea').attr('gerar-qrcode', _base).change(changeEvent);
+                $(this).find('input:text, textarea').attr('gerar-qrcode', _base).keyup(changeEvent);
             };
         };
         var exchangeTemplateEvent = function (event) {
-            $('.GerarQRCode .nav-tabs a').first().click();
-            $('#GerarQRCode-Dados > div')
+            var _base = $(this).attr('gerar-qrcode');
+            var _classeBase = '.' + _base;
+
+            $(_classeBase + ' .nav-tabs a').first().click();
+            $(_classeBase + ' .tab-content fieldset div')
+                .first()
                 .html('<p>Aguarde...</p>')
                 .load($(this).attr('href'), loadTemplate);
             return false;
         };
         var changeEvent = function (event) {
-            var _dados = $('#GerarQRCode-Dados').serialize();
-            var _config = $('#GerarQRCode-Config').serialize();
-            
-            var $valor = _dados + "&" + _dados;
+            var _base = $(this).attr('gerar-qrcode');
+            var _classeBase = '.' + _base;
+
+            var $valor = $(_classeBase + ' form').serialize();
             var $url = settings.urlPreview + "&timeout=" + (new Date()).getTime() + "&";
-            $('.GerarQRCode .download').addClass('disabled').attr('href', $url + $valor + "&download=true");
-            $('.GerarQRCode .preview')
+            $(_classeBase + ' .preview a').addClass('disabled').attr('href', $url + $valor + "&download=true");
+            $(_classeBase + ' .preview img')
                 .unbind({ 'load': loadEvent, 'error': errorEvent })
                 .PreloadImage({ url: $url + $valor })
                 .bind({ 'load': loadEvent, 'error': errorEvent });
             return false;
         };
+
         return this.each(function () {
-            $(this).addClass('GerarQRCode').load(
+            var _guid = guid();
+            $(this).attr('gerar-qrcode', _guid).addClass(_guid).load(
                 settings.template + "base.html",
                 function () {
+                    var _base = $(this).attr('gerar-qrcode');
                     $(this).html($(this).html().replace(new RegExp("~/", "gm"), settings.folder));
-                    $(this).find('form').bind({ 'submit': changeEvent })
-                        .find('input, select, textarea').bind({
-                            'change': changeEvent
+                    
+                    $(this).find('a, form, fieldset, input, select, textarea, button, img').attr('gerar-qrcode', _base);
+                    
+                    $(this).find('form')
+                        .bind({ 'submit': changeEvent })
+                        .find('input, select, textarea')
+                        .attr('gerar-qrcode', _base)
+                        .bind({ 'change': changeEvent });
+
+                    $(this).find('.link-url').bind({ 'click': exchangeTemplateEvent }).click();
+                    $(this).find('.link-text').bind({ 'click': exchangeTemplateEvent });
+
+                    var _list = [];
+                    $(this).find('form ul.nav-tabs > li > a').each(function (index) {
+                        _list[index] = guid();
+                        $(this).attr({
+                            'href': ("#" + _list[index]),
+                            'aria-controls': (_list[index])
+                        });
                     });
-                    $('.GerarQRCode .link-url').bind({ 'click' : exchangeTemplateEvent }).click();
-                    $('.GerarQRCode .link-text').bind({ 'click': exchangeTemplateEvent });
+                    $(this).find('form div.tab-content > fieldset').each(function (index) {
+                        $(this).attr({
+                            'id': (_list[index])
+                        }).find('div').first().attr({
+                            'gerar-qrcode': _base
+                        });
+                    });
                 });
         });
 

@@ -1,3 +1,4 @@
 ﻿jQuery(document).ready(function ($) {
-    $('div').GerarQRCode();
+    $('#ex1, #ex2').GerarQRCode();
+    $('#ex3').GerarQRCode();
 });
