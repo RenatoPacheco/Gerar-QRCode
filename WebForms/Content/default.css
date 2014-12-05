@@ -9,8 +9,9 @@ fieldset {
 legend {
   display: none;
 }
-img.preloader {
-  display: none;
+img {
+  max-width: 128px;
+  max-height: 128px;
 }
 @media (max-width: 767px) {
   h1 {

@@ -1,0 +1,44 @@
+﻿.Gerar-QRCode {
+    .nav-tabs {
+        a {
+            display:block;
+            min-width:32px;
+            min-height:32px;
+            padding-left:42px;
+            background-position: 10px center;
+            background-repeat:no-repeat;
+            &.dados {
+                background-image:url(images/icones/inbox/24.png);
+            }
+            &.configuracao {
+                background-image:url(images/icones/config/24.png);
+            }
+            &.formato {
+                background-image:url(images/icones/list-alt/24.png);
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .Gerar-QRCode {
+        .nav-tabs {
+            a {
+                min-width:32px;
+                min-height:32px;
+                padding:1.4em 2em 1.4em 2em;
+                background-position: center center;
+                background-repeat:no-repeat;
+                &.dados {
+                    background-image:url(images/icones/inbox/32.png);
+                }
+                &.configuracao {
+                    background-image:url(images/icones/config/32.png);
+                }
+                &.formato {
+                    background-image:url(images/icones/list-alt/32.png);
+                }
+            }
+        }
+    }
+}

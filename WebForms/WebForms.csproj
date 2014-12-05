@@ -158,11 +158,27 @@
     <Content Include="Content\bootstrap\bootstrap.less" />
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Scripts\gerarqrcode\gerarQRCode.css">
+      <DependentUpon>gerarQRCode.less</DependentUpon>
+    </Content>
+    <Content Include="Scripts\gerarqrcode\gerarQRCode.less" />
+    <Content Include="Scripts\gerarqrcode\gerarQRCode.css.map">
+      <DependentUpon>gerarQRCode.css</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.11.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\default.js" />
     <Content Include="Scripts\gerarqrcode\gerarQRCode.js" />
+    <Content Include="Scripts\gerarqrcode\gerarQRCode.min.css">
+      <DependentUpon>gerarQRCode.css</DependentUpon>
+    </Content>
+    <Content Include="Scripts\gerarqrcode\images\icones\config\128.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\config\16.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\config\24.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\config\256.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\config\32.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\config\64.png" />
     <Content Include="Scripts\gerarqrcode\images\icones\file\128.png" />
     <Content Include="Scripts\gerarqrcode\images\icones\file\16.png" />
     <Content Include="Scripts\gerarqrcode\images\icones\file\256.png" />
@@ -198,6 +214,13 @@
     <Content Include="Scripts\gerarqrcode\images\icones\trash\256.png" />
     <Content Include="Scripts\gerarqrcode\images\icones\trash\32.png" />
     <Content Include="Scripts\gerarqrcode\images\icones\trash\64.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\user\128.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\user\16.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\user\24.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\user\256.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\user\32.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\user\64.png" />
+    <Content Include="Scripts\gerarqrcode\templates\vcard.html" />
     <Content Include="Scripts\gerarqrcode\templates\url.html" />
     <Content Include="Scripts\gerarqrcode\templates\base.html" />
     <Content Include="Scripts\gerarqrcode\templates\text.html" />

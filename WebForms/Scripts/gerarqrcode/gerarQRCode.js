@@ -11,6 +11,9 @@
             urlDownload: "/Ashx/GerarQRCode.ashx?download=true"
         }, options);
         var guid = (function () { function key() { return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1); } return function () { return key() + key() + '-' + key() + '-' + key() + '-' + key() + '-' + key() + key() + key(); }; })();
+        var resizeEvent = function(){
+            $('.gerar-qrcode .nav-tabs li a').first().focus().click();
+        };
         var loadEvent = function (event) {
             var _base = $(this).attr('gerar-qrcode');
             var _classeBase = '.' + _base;
@@ -50,20 +53,52 @@
         var changeEvent = function (event) {
             var _base = $(this).attr('gerar-qrcode');
             var _classeBase = '.' + _base;
+            var _formato = $(_classeBase + " form input[name='acao']").val();
+            var _valor = $(_classeBase + ' form').serialize();
 
-            var $valor = $(_classeBase + ' form').serialize();
+            _valor = format[_formato]($(_classeBase + ' form'));
+            
             var $url = settings.urlPreview + "&timeout=" + (new Date()).getTime() + "&";
-            $(_classeBase + ' .preview a').addClass('disabled').attr('href', $url + $valor + "&download=true");
+            $(_classeBase + ' .preview a').addClass('disabled').attr('href', $url + _valor + "&download=true");
             $(_classeBase + ' .preview img')
                 .unbind({ 'load': loadEvent, 'error': errorEvent })
-                .PreloadImage({ url: $url + $valor })
+                .PreloadImage({ url: $url + _valor })
                 .bind({ 'load': loadEvent, 'error': errorEvent });
             return false;
         };
+        var format = {
+            url: function (element) {
+                return $(element).serialize();
+            },
+            text: function (element) {
+                return $(element).serialize();
+            },
+            vcard: function (element) {
+                var _resultado = "";
+
+                _resultado += "\nBEGIN:VCARD";
+                _resultado += "\nVERSION:2.1";
+                _resultado += "\nFN:Renato Pacheco";
+                _resultado += "\nN:Pacheco;Renato";
+                _resultado += "\nTITLE:Add";
+                _resultado += "\nTEL;CELL:9604";
+                _resultado += "\nTEL;WORK;VOICE:3767";
+                _resultado += "\nTEL;HOME;VOICE:2909";
+                _resultado += "\nEMAIL;HOME;INTERNET:eu@eu.com";
+                _resultado += "\nEMAIL;WORK;INTERNET:eu@unip.br";
+                _resultado += "\nURL:http://www.teste";
+                _resultado += "\nADR:;;Cristóvão;são paulo;;02083000;brasil";
+                _resultado += "\nORG:unip";
+                _resultado += "\nEND:VCARD";
+
+                return "valor=" + $.trim(_resultado);
+            }
+        };
 
         return this.each(function () {
+            $(window).unbind({ 'resize': resizeEvent }).bind({ 'resize': resizeEvent });
             var _guid = guid();
-            $(this).attr('gerar-qrcode', _guid).addClass(_guid).load(
+            $(this).attr('gerar-qrcode', _guid).addClass(_guid + " gerar-qrcode").load(
                 settings.template + "base.html",
                 function () {
                     var _base = $(this).attr('gerar-qrcode');
@@ -77,8 +112,9 @@
                         .attr('gerar-qrcode', _base)
                         .bind({ 'change': changeEvent });
 
-                    $(this).find('.link-url').bind({ 'click': exchangeTemplateEvent }).click();
-                    $(this).find('.link-text').bind({ 'click': exchangeTemplateEvent });
+                    $(this).find("#GerarQRCode-Format").append($(this).find('.options').clone().attr('class', 'options'));
+                    $(this).find('.options > a').bind({ 'click': exchangeTemplateEvent });
+                    $(this).find('.options > a').first().click();
 
                     var _list = [];
                     $(this).find('form ul.nav-tabs > li > a').each(function (index) {
