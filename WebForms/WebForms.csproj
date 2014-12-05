@@ -196,6 +196,12 @@
     <Content Include="Scripts\gerarqrcode\images\icones\inbox\256.png" />
     <Content Include="Scripts\gerarqrcode\images\icones\inbox\32.png" />
     <Content Include="Scripts\gerarqrcode\images\icones\inbox\64.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\list-alt\128.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\list-alt\16.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\list-alt\24.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\list-alt\256.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\list-alt\32.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\list-alt\64.png" />
     <Content Include="Scripts\gerarqrcode\images\icones\picture\128.png" />
     <Content Include="Scripts\gerarqrcode\images\icones\picture\16.png" />
     <Content Include="Scripts\gerarqrcode\images\icones\picture\24.png" />

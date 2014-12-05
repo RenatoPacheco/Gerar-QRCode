@@ -78,20 +78,20 @@
 
                 _resultado += "\nBEGIN:VCARD";
                 _resultado += "\nVERSION:2.1";
-                _resultado += "\nFN:Renato Pacheco";
-                _resultado += "\nN:Pacheco;Renato";
-                _resultado += "\nTITLE:Add";
-                _resultado += "\nTEL;CELL:9604";
-                _resultado += "\nTEL;WORK;VOICE:3767";
-                _resultado += "\nTEL;HOME;VOICE:2909";
-                _resultado += "\nEMAIL;HOME;INTERNET:eu@eu.com";
-                _resultado += "\nEMAIL;WORK;INTERNET:eu@unip.br";
-                _resultado += "\nURL:http://www.teste";
-                _resultado += "\nADR:;;Cristóvão;são paulo;;02083000;brasil";
-                _resultado += "\nORG:unip";
+                _resultado += "\nFN:" + $(element).find("input[name='nome']").val() + " " + $(element).find("input[name='sobrenome']").val();
+                _resultado += "\nN:" + $(element).find("input[name='sobrenome']").val() + ";" + $(element).find("input[name='nome']").val();
+                _resultado += "\nTITLE:" + $(element).find("input[name='cargo']").val();
+                _resultado += "\nTEL;CELL:" + $(element).find("input[name='cel-pessoal']").val();
+                _resultado += "\nTEL;WORK;VOICE:" + $(element).find("input[name='tel-comercial']").val();
+                _resultado += "\nTEL;HOME;VOICE:" + $(element).find("input[name='tel-pessoal']").val();
+                _resultado += "\nEMAIL;HOME;INTERNET:" + $(element).find("input[name='email-pessoal']").val();
+                _resultado += "\nEMAIL;WORK;INTERNET:" + $(element).find("input[name='email-comercial']").val();
+                _resultado += "\nURL:" + $(element).find("input[name='website']").val();
+                _resultado += "\nADR:;;" + $(element).find("input[name='endereco']").val() + ";" + $(element).find("input[name='cidade']").val() + ";" + $(element).find("input[name='estado']").val() + ";" + $(element).find("input[name='cep']").val() + ";";
+                _resultado += "\nORG:" + $(element).find("input[name='empresa']").val();
                 _resultado += "\nEND:VCARD";
 
-                return "valor=" + $.trim(_resultado);
+                return $(element).find('fieldset').eq(1).serialize() + "&" + $('<textarea/>').attr('name', 'valor').val(_resultado).serialize();
             }
         };
 
