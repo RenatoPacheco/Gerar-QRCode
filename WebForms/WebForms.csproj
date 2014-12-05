@@ -73,30 +73,6 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Images\icones\globe\128.png" />
-    <Content Include="Images\icones\globe\16.png" />
-    <Content Include="Images\icones\globe\24.png" />
-    <Content Include="Images\icones\globe\256.png" />
-    <Content Include="Images\icones\globe\32.png" />
-    <Content Include="Images\icones\globe\64.png" />
-    <Content Include="Images\icones\inbox\128.png" />
-    <Content Include="Images\icones\inbox\16.png" />
-    <Content Include="Images\icones\inbox\24.png" />
-    <Content Include="Images\icones\inbox\256.png" />
-    <Content Include="Images\icones\inbox\32.png" />
-    <Content Include="Images\icones\inbox\64.png" />
-    <Content Include="Images\icones\picture\128.png" />
-    <Content Include="Images\icones\picture\16.png" />
-    <Content Include="Images\icones\picture\24.png" />
-    <Content Include="Images\icones\picture\256.png" />
-    <Content Include="Images\icones\picture\32.png" />
-    <Content Include="Images\icones\picture\64.png" />
-    <Content Include="Images\icones\preloader\128.gif" />
-    <Content Include="Images\icones\preloader\16.gif" />
-    <Content Include="Images\icones\preloader\24.gif" />
-    <Content Include="Images\icones\preloader\256.gif" />
-    <Content Include="Images\icones\preloader\32.gif" />
-    <Content Include="Images\icones\preloader\64.gif" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -182,14 +158,95 @@
     <Content Include="Content\bootstrap\bootstrap.less" />
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Scripts\gerarqrcode\gerarQRCode.css">
+      <DependentUpon>gerarQRCode.less</DependentUpon>
+    </Content>
+    <Content Include="Scripts\gerarqrcode\gerarQRCode.less" />
+    <Content Include="Scripts\gerarqrcode\gerarQRCode.css.map">
+      <DependentUpon>gerarQRCode.css</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.11.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\default.js" />
+    <Content Include="Scripts\gerarqrcode\gerarQRCode.js" />
+    <Content Include="Scripts\gerarqrcode\gerarQRCode.min.css">
+      <DependentUpon>gerarQRCode.css</DependentUpon>
+    </Content>
+    <Content Include="Scripts\gerarqrcode\images\icones\config\128.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\config\16.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\config\24.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\config\256.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\config\32.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\config\64.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\file\128.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\file\16.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\file\256.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\file\32.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\file\64.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\globe\128.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\globe\16.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\globe\24.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\globe\256.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\globe\32.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\globe\64.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\inbox\128.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\inbox\16.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\inbox\24.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\inbox\256.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\inbox\32.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\inbox\64.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\list-alt\128.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\list-alt\16.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\list-alt\24.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\list-alt\256.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\list-alt\32.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\list-alt\64.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\picture\128.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\picture\16.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\picture\24.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\picture\256.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\picture\32.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\picture\64.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\preloader\128.gif" />
+    <Content Include="Scripts\gerarqrcode\images\icones\preloader\16.gif" />
+    <Content Include="Scripts\gerarqrcode\images\icones\preloader\24.gif" />
+    <Content Include="Scripts\gerarqrcode\images\icones\preloader\256.gif" />
+    <Content Include="Scripts\gerarqrcode\images\icones\preloader\32.gif" />
+    <Content Include="Scripts\gerarqrcode\images\icones\preloader\64.gif" />
+    <Content Include="Scripts\gerarqrcode\images\icones\trash\128.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\trash\16.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\trash\24.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\trash\256.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\trash\32.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\trash\64.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\user\128.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\user\16.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\user\24.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\user\256.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\user\32.png" />
+    <Content Include="Scripts\gerarqrcode\images\icones\user\64.png" />
+    <Content Include="Scripts\gerarqrcode\templates\vcard.html" />
+    <Content Include="Scripts\gerarqrcode\templates\url.html" />
+    <Content Include="Scripts\gerarqrcode\templates\base.html" />
+    <Content Include="Scripts\gerarqrcode\templates\text.html" />
     <Content Include="Scripts\html5shiv.js" />
     <Content Include="Scripts\jquery-1.11.1.js" />
     <Content Include="Scripts\jquery-1.11.1.min.js" />
     <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\preload-image\img\icon\picture\128.png" />
+    <Content Include="Scripts\preload-image\img\icon\picture\16.png" />
+    <Content Include="Scripts\preload-image\img\icon\picture\24.png" />
+    <Content Include="Scripts\preload-image\img\icon\picture\256.png" />
+    <Content Include="Scripts\preload-image\img\icon\picture\32.png" />
+    <Content Include="Scripts\preload-image\img\icon\picture\64.png" />
+    <Content Include="Scripts\preload-image\img\icon\preloader\128.gif" />
+    <Content Include="Scripts\preload-image\img\icon\preloader\16.gif" />
+    <Content Include="Scripts\preload-image\img\icon\preloader\24.gif" />
+    <Content Include="Scripts\preload-image\img\icon\preloader\256.gif" />
+    <Content Include="Scripts\preload-image\img\icon\preloader\32.gif" />
+    <Content Include="Scripts\preload-image\img\icon\preloader\64.gif" />
+    <Content Include="Scripts\preload-image\jquery.preload-image.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
@@ -224,7 +281,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

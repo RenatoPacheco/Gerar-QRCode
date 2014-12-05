@@ -22,7 +22,7 @@ namespace WebForms.Ashx
             string modo = "BYTE";
             int versao = 0;
             string correcao = "M";
-
+            
             if (!double.TryParse(context.Request["escala"], out escala))
                 escala = 1;
 
@@ -40,6 +40,9 @@ namespace WebForms.Ashx
 
             if (context.Request["correcao"] != null)
                 correcao = context.Request["correcao"].Trim();
+
+            if (string.IsNullOrEmpty(valor) || string.IsNullOrWhiteSpace(valor))
+                throw new Exception("Nenum valor foi informado para gerar a imagem");
 
             MemoryStream ms = new MemoryStream();
             QRCodeEncoder encode = new QRCodeEncoder();
